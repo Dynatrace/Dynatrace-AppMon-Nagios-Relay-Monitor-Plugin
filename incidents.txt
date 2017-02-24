@@ -1,0 +1,19 @@
+https://{dtServer}:{dtPort}/rest/management/reports/create/{dashboardName}?type=XML&filter=tf:OffsetTimeframe?{timeRange+1}:MINUTES
+
+
+Get the incident instance : 
+
+//incidentoverviewrecord/incidentoverviewrecord/incidentoverviewrecord
+
+string(../../../../source/@name): System Profile  			<=> Nagios Host name
+
+../@name						: Incident name 			<=> Nagios Service name
+@end							: if not there i.e. pending <=> Nagios is open
+@name							: description 				<=> Nagios message
+
+
+
+
+
+
+

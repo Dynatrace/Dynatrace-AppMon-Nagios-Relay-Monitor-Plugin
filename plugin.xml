@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!-- plugin.xml file written by dynaTrace Client 6.3.13 -->
+<plugin>
+  <extension point="com.dynatrace.diagnostics.pdk.pluginconfig" id="com.dynatrace.nagios.NagiosAlerting" name="NagiosRelayMonitor">
+    <information>
+      <category value="" />
+      <displayname value="Nagios Relay Monitor" />
+      <description value="Nagios Relay Monitor for dynaTrace.&#xA;Created By By Laurent Izac 2017.02.03" />
+      <supportlevel value="unsupported" />
+    </information>
+    <configuration>
+      <property key="nrdpNagiosURL" label="NRDP Nagios URL" type="string" description="url of the NRDP server endpoint" default="http://nagios.mydomain.com/nrdp/" multiline="false" />
+      <property key="nrdpToken" label="NRDP Token" type="string" description="authentication token configured in the NRDP server" default="" multiline="false" />
+      <property key="connectionTimeout" label="ConnectTimeout" type="string" description="The connection timeout in ms" default="5000" multiline="false" />
+      <property key="protocol" label="Protocol" type="list" description="HTTP Protocol (HTTP or HTTPS) to dynaTrace Server" default="https">
+        <list>
+          <item value="http" />
+          <item value="https" />
+        </list>
+      </property>
+      <property key="httpPort" label="Port" type="long" description="HTTP/HTTPS Port to dynaTrace Server" default="8021" />
+      <property key="username" label="Username" type="string" description="dynaTrace username to access dashboard" default="username" multiline="false" />
+      <property key="password" label="Password" type="password" description="dynaTrace password to access dashboard" default="" />
+      <property key="systemProfile" label="System Profile Name" type="string" description="System Profile Name" default="" multiline="false" />
+      <property key="dashboardName" label="Dashboard" type="string" description="Please enter name of the dashboard" default="Incident Dashboard" multiline="false" />
+    </configuration>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitor" id="com.dynatrace.nagios.NagiosAlerting.monitor" name="Nagios Relay Monitor">
+    <plugin configid="com.dynatrace.nagios.NagiosAlerting" class="com.dynatrace.nagios.NagiosRelay" />
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.dynatrace.nagios.NagiosAlerting.metricgroup1" name="Nagios">
+    <metricgroup monitorid="com.dynatrace.nagios.NagiosAlerting.monitor">
+      <metric defaultrate="purepath" name="Status" unit="number" description="My metric description ..." />
+    </metricgroup>
+  </extension>
+</plugin>
