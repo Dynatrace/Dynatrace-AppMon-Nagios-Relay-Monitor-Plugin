@@ -227,7 +227,7 @@ public class NagiosRelay implements Monitor {
 				log.finer("i: " + i);
 
 				incidentName = xpathNodeList.item(i).getParentNode().getAttributes().getNamedItem("name")
-						.getTextContent().replaceAll("\\s\\(\\d*\\)", "");
+						.getTextContent().replaceAll("\\s\\(\\d*\\)", "").replaceAll("(\\(|\\))", "");
 
 				log.info(incidentName);
 
