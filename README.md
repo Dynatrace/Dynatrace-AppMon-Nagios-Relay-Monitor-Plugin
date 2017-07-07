@@ -12,7 +12,7 @@
 
 **Support Level** Not Supported
 
-**Download (latest version)** [com.dynatrace.nagios.NagiosRelayMonitor_1.0.0.jar](https://github.com/Dynatrace/Dynatrace-Nagios-Relay-Monitor-Plugin/blob/master/build/com.dynatrace.nagios.NagiosRelayMonitor_1.0.0.jar?raw=true)
+**Download (latest version)** [com.dynatrace.nagios.NagiosRelayMonitor_1.0.0.jar](https://github.com/Dynatrace/Dynatrace-AppMon-Nagios-Relay-Monitor-Plugin/releases/download/1.0.0/com.dynatrace.nagios.NagiosRelayMonitor_1.0.0.jar)
 
 
 ## Description 
